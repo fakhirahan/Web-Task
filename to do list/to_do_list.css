@@ -1,0 +1,117 @@
+/* Memberi warna latar belakang pada halaman */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #788b98; /* Warna latar belakang */
+}
+
+/* Mengatur tampilan kontainer utama */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(255, 245, 237, 0.9); /* Warna latar kontainer dengan transparansi */
+    padding: 20px;
+    border-radius: 10px; /* Membuat sudut elemen lebih melengkung */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Membuat bayangan pada kontainer */
+    animation: slideIn 1s ease forwards; /* Animasi muncul */
+}
+
+/* Mengatur gaya teks judul */
+h1 {
+    text-align: center;
+    color: #134160; /* Warna teks judul biru */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Efek bayangan teks */
+}
+
+/* Mengatur input teks */
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px; /* Membuat sudut input lebih melengkung */
+}
+
+/* Mengatur gaya tombol */
+button {
+    padding: 8px 16px;
+    background-color: #fff; /* Warna latar tombol */
+    color: #3498db; /* Warna teks tombol */
+    border: none;
+    cursor: pointer;
+    border-radius: 20px; /* Membuat sudut tombol lebih melengkung */
+    transition: background-color 0.3s, color 0.3s; /* Efek transisi saat hover */
+}
+
+/* Efek hover pada tombol */
+button:hover {
+    background-color: #3498db; /* Warna latar tombol saat hover */
+    color: #fff; /* Warna teks tombol saat hover */
+}
+
+/* Mengatur tampilan daftar tugas */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Mengatur gaya setiap tugas dalam daftar */
+li {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: rgba(255, 142, 3, 0.436); /* Warna latar setiap tugas dengan transparansi */
+    border-radius: 5px; /* Membuat sudut tugas lebih melengkung */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    animation: fadeIn 1s ease forwards; /* Animasi muncul */
+}
+/* Animasi untuk muncul */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mengatur gaya tombol delete */
+.delete-button {
+    background-color: #ffffff; /* Warna latar tombol delete */
+    color: #ffffff; /* Warna teks tombol delete */
+    border: none;
+    cursor: pointer;
+    border-radius: 50%; /* Membuat sudut tombol delete menjadi lingkaran */
+    padding: 5px; /* Menambahkan ruang di dalam tombol */
+    margin-left: 5px; /* Menambahkan jarak dari teks tugas */
+    transition: background-color 0.3s, color 0.3s; /* Efek transisi saat hover */
+}
+/* Mengatur gaya tombol delete */
+.delete-btn {
+    transform: scale(0.5); /* Memperbesar skala tombol delete */
+    margin-left: 10px; /* Menambahkan jarak antara tombol delete dan teks tugas */
+    background-color: transparent; /* Menghapus warna latar belakang */
+    border: none; /* Menghapus border */
+    cursor: pointer;
+}
+
+/* Efek hover pada tombol delete */
+.delete-button:hover {
+    background-color: #9f1b1b2f; /* Warna latar tombol delete saat hover */
+}
+
+/* Mengatur gaya checkbox */
+input[type="checkbox"] {
+    transform: scale(1.5); /* Memperbesar skala checkbox */
+    margin-right: 10px; /* Menambahkan jarak dari teks tugas */
+}
+
+/* Animasi untuk muncul */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

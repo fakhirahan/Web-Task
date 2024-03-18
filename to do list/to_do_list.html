@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="to_do_list.css">
+</head>
+<body>
+    <div class="container">
+        <h1>To Do List</h1>
+        <input type="text" id="taskInput" placeholder="Add a new task"> <!-- Input untuk menambahkan tugas baru -->
+        <button id="addTaskBtn">Add Task</button> <!-- Tombol untuk menambahkan tugas -->
+        <ul id="taskList"></ul> <!-- Daftar tugas -->
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const taskInput = document.getElementById("taskInput");
+            const addTaskBtn = document.getElementById("addTaskBtn");
+            const taskList = document.getElementById("taskList");
+
+            addTaskBtn.addEventListener("click", function() {
+                const taskText = taskInput.value.trim();
+                if (taskText !== "") {
+                    addTask(taskText); // Memanggil fungsi untuk menambahkan tugas
+                    taskInput.value = ""; // Mengosongkan input setelah menambahkan tugas
+                }
+            });
+
+            // Fungsi untuk menambahkan tugas baru ke dalam daftar
+            function addTask(taskText) {
+                const li = document.createElement("li"); // Membuat elemen <li> baru
+                // Buat checkbox untuk menandai tugas sebagai selesai
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                // Tambahkan event listener untuk menghapus tugas ketika checkbox diklik
+                checkbox.addEventListener("change", function() {
+                    if (checkbox.checked) {
+                        li.style.textDecoration = "line-through"; // Menambahkan garis coret pada teks
+                    } else {
+                        li.style.textDecoration = "none"; // Menghapus garis coret pada teks
+                    }
+                });
+                li.appendChild(checkbox);
+                // Tambahkan teks tugas
+                const span = document.createElement("span");
+                span.textContent = taskText;
+                li.appendChild(span);
+                // Tambahkan tombol delete
+                const deleteButton = document.createElement("button");
+                deleteButton.textContent = "❌";
+                deleteButton.className = "delete-button";
+                deleteButton.addEventListener("click", function() {
+                    li.remove(); // Hapus elemen <li> dari daftar tugas
+                });
+                li.appendChild(deleteButton);
+                // Tambahkan elemen <li> ke dalam daftar tugas
+                taskList.appendChild(li);
+            }
+        });
+    </script>
+    <script src="script.js"></script> <!-- Menghubungkan file JavaScript -->  
+</body>
+</html>
